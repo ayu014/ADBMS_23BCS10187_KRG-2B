@@ -4,7 +4,7 @@ CREATE TABLE department (
     dept_name VARCHAR(50)
 );
 
--- Create Employee Table
+--Employee Table
 CREATE TABLE employee (
     id INT,
     name VARCHAR(50),
@@ -13,12 +13,12 @@ CREATE TABLE employee (
     FOREIGN KEY (department_id) REFERENCES department(id)
 );
 
--- Insert into Department Table
+
 INSERT INTO department (id, dept_name) VALUES
 (1, 'IT'),
 (2, 'SALES');
 
--- Insert into Employee Table
+
 INSERT INTO employee (id, name, salary, department_id) VALUES
 (1, 'JOE', 70000, 1),
 (2, 'JIM', 90000, 1),

@@ -23,10 +23,13 @@ INSERT INTO tbl_B(empiD, empName, empSalary) VALUES
 (3, 'SAM', 60000);
 
 
-SELECT empID, MIN(empName), MIN(empSalary)
-FROM 
-(SELECT * FROM tbl_A
-UNION ALL
-SELECT * FROM tbl_B
+SELECT empiD, MIN(empName) AS empName, MIN(empSalary) AS lowestSalary
+FROM (
+    SELECT * FROM tbl_A
+    UNION ALL
+    SELECT * FROM tbl_B
+) AS INTER
+GROUP BY empiD;
+
 
 
